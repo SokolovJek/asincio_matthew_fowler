@@ -1,0 +1,20 @@
+import asyncio
+from utils import delay
+
+
+async def main():
+    sleep_for_tree = asyncio.create_task(delay(3))      #2
+    print(type(sleep_for_tree))                         #1
+    result = await sleep_for_tree                       # без await интерпретатор не дождался бы окончания функции delay(3)
+    print(result)
+
+asyncio.run(main())
+
+
+# async def main():
+#     sleep_for_tree = await delay(3)         # 1
+#     print(type(sleep_for_tree))             # 2
+#     # result = await sleep_for_tree
+#     print(sleep_for_tree)                   # 3
+
+# asyncio.run(main())
