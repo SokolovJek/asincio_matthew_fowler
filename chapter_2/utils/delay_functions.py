@@ -1,6 +1,8 @@
 import asyncio
+from .async_timer import async_timed
 
 
+@async_timed()
 async def delay(delay_second: int, num_func=0) -> int:
     """Повторно используемая сопрограмма delay"""
     print(f'засыпаю на {delay_second} с. Function:{num_func}')
