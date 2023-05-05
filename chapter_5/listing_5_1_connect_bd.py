@@ -7,7 +7,7 @@ async def main():
                                         port=5432,
                                         user='postgres',
                                         database='postgres',
-                                        password='password')
+                                        password='postgres')
     version = connection.get_server_version()
     print(f'Подключено! Версия Postgres равна {version}')
     await connection.close()
