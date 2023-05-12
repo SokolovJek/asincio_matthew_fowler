@@ -12,13 +12,14 @@ async def main() -> None:
                                         database='products',
                                         password='postgres')
     print('Creating the product database...')
-    queries = [connection.execute(product_query),       # exeption = RuntimeWarning
-               connection.execute(product_query)]
+    queries = [connection.feath(product_query),       # exeption = RuntimeWarning
+               connection.execute(product_query)
+               ]
     """
     В SQL одному подключению к базе соответствует
     один сокет. Поскольку подключение всего одно, а мы пытаемся прочитать одновременно результаты нескольких запросов, естественно,
     возникает ошибка.
-    """       
+    """
     results = await asyncio.gather(*queries)
     # print(await connection.execute(product_query))
 

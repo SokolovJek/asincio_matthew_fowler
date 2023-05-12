@@ -69,6 +69,6 @@ FROM product as p
 JOIN sku as s on s.product_id = p.product_id
 JOIN product_color as pc on pc.product_color_id = s.product_color_id
 JOIN product_size as ps on ps.product_size_id = s.product_size_id
-WHERE p.product_id = 100"""
+WHERE p.product_id = 99"""
 
 brand_query = 'SELECT brand_id, brand_name FROM brand'
